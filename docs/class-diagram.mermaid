@@ -1,0 +1,120 @@
+classDiagram
+    direction LR
+
+    class DashboardData {
+        +Store[] stores
+        +CampaignSeries[] campaigns
+        +Rule[] rules
+        +PlanCatalogItem[] planCatalog
+        +MetricRow[] metrics
+        +LogEntry[] logs
+        +KpiSnapshot kpi
+        +RecentAction[] recentActions
+        +TrendPoint[] trend
+    }
+
+    class Store {
+        +string id
+        +LocalizedText name
+        +LocalizedText advertiser
+        +StoreBindingStatus bindingStatus
+        +number gmvSummary
+        +Member[] members
+    }
+    class Member {
+        +string id
+        +LocalizedText name
+        +LocalizedText role
+    }
+    class CampaignSeries {
+        +string id
+        +LocalizedText name
+        +string storeId
+        +CampaignStatus status
+        +CampaignObjective objective
+        +number budget
+        +number spend
+        +number gmv
+        +number roas
+        +Creative[] creatives
+    }
+    class Creative {
+        +string id
+        +LocalizedText name
+        +CampaignStatus status
+        +number impressions
+        +number clicks
+        +number ctr
+        +Product[] products
+    }
+    class Product {
+        +string id
+        +LocalizedText name
+        +string sku
+        +number price
+        +number gmv
+        +number orders
+    }
+    class Rule {
+        +string id
+        +LocalizedText name
+        +string storeId
+        +RuleCondition[] conditions
+        +PlanType planType
+        +boolean enabled
+        +string lastTriggered
+        +number triggerCount
+    }
+    class RuleCondition {
+        +RuleConditionField field
+        +RuleOperator operator
+        +value
+    }
+    class PlanCatalogItem {
+        +PlanType type
+        +LocalizedText title
+        +LocalizedText desc
+        +PlanConfigField[] configFields
+        +number triggerCount
+    }
+    class MetricRow {
+        +string id
+        +MetricDimension dimension
+        +LocalizedText name
+        +number gmv
+        +number roas
+    }
+    class LogEntry {
+        +string id
+        +string time
+        +string ruleId
+        +LocalizedText ruleName
+        +LocalizedText action
+        +LogResult result
+        +number impactGmv
+    }
+    class KpiSnapshot {
+        +number gmv
+        +number spend
+        +number roas
+        +number conversions
+        +number orders
+        +number ctr
+    }
+    class LocalizedText {
+        +string zh
+        +string en
+    }
+
+    DashboardData "1" *-- ">=4" Store
+    DashboardData "1" *-- ">=8" CampaignSeries
+    DashboardData "1" *-- ">=8" Rule
+    DashboardData "1" *-- ">=30" LogEntry
+    Store "1" *-- "many" Member
+    CampaignSeries "1" *-- "many" Creative
+    Creative "1" *-- "many" Product
+    Rule "1" *-- ">=1" RuleCondition
+    Rule "1" --> "1" PlanType : planType
+    LocalizedText <.. Store : name/advertiser
+    LocalizedText <.. Rule : name
+    LocalizedText <.. LogEntry : ruleName/action

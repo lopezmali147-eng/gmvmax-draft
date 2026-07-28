@@ -1,0 +1,23 @@
+sequenceDiagram
+    autonumber
+    actor User
+    participant Nav as Navbar
+    participant Router as BrowserRouter/App
+    participant Layout as DashboardLayout
+    participant Sidebar as Sidebar
+    participant Page as Overview(子路由页)
+    participant Data as dashboardData
+    participant Lang as LangProvider
+
+    User->>Nav: 点击 “Dashboard” 链接
+    Nav->>Router: navigate("/dashboard")
+    Router->>Layout: 匹配 /dashboard 父路由元素
+    Layout->>Lang: useLang() 取 t
+    Layout->>Sidebar: 渲染侧边栏 (t.dashboard.nav)
+    Sidebar-->>Layout: useLocation 高亮当前项
+    Layout->>Page: <Outlet/> 解析 index → Overview
+    Page->>Data: import 并读取 dashboardData.kpi/.trend/.stores/.recentActions
+    Page->>Lang: useLang() 取 t.dashboard.overview.*
+    Page->>Page: 组装 KpiCard×6 + TrendChart + 列表 + DemoBadge
+    Page-->>User: 展示 Overview 看板
+    Note over Lang,Data: 所有文案来自 t；所有数据来自模块级 dashboardData（刷新可复现）
