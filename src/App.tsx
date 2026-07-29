@@ -13,6 +13,8 @@ import Automation from './pages/dashboard/Automation';
 import Logs from './pages/dashboard/Logs';
 import Metrics from './pages/dashboard/Metrics';
 import Accounts from './pages/dashboard/Accounts';
+import OAuthTikTokDemo from './pages/OAuthTikTokDemo';
+import OAuthCallback from './pages/OAuthCallback';
 
 /**
  * 应用根组件：定义路由表与全局布局（导航 + 内容 + 页脚）。
@@ -33,6 +35,8 @@ export default function App() {
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/demo" element={<Demo />} />
+          <Route path="/oauth/tiktok-demo" element={<OAuthTikTokDemo />} />
+          <Route path="/oauth/callback" element={<OAuthCallback />} />
           <Route path="/dashboard" element={<DashboardLayout />}>
             <Route index element={<Overview />} />
             <Route path="campaigns" element={<Campaigns />} />

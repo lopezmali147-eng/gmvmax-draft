@@ -207,6 +207,28 @@ export interface DashboardContent {
   };
 }
 
+/** TikTok OAuth 演示流程文案结构。 */
+export interface OAuthContent {
+  sectionTitle: string;
+  sectionSubtitle: string;
+  connectButton: string;
+  connectedBadge: string;
+  accountLabel: string;
+  disconnect: string;
+  pageHeading: string;
+  simulatedBanner: string;
+  demoNote: string;
+  authPrompt: string;
+  scopeTitle: string;
+  scopeBasic: string;
+  scopeAd: string;
+  authorize: string;
+  cancel: string;
+  authorized: string;
+  returning: string;
+  backToConsole: string;
+}
+
 /** 全站文案结构。 */
 export interface Content {
   nav: {
@@ -256,6 +278,7 @@ export interface Content {
   };
   demo: DemoContent;
   dashboard: DashboardContent;
+  oauth: OAuthContent;
 }
 
 /** 全站文案：按语言组织，中文保留原意，英文为专业、克制、不夸大的对应翻译。 */
@@ -382,10 +405,27 @@ export const content: Record<Lang, Content> = {
           ],
         },
         {
-          title: '7. 联系方式',
+          title: '7. 联系方式与数据保护官（DPO）',
           paragraphs: [
             '如您对本隐私政策或我们的数据处理方式有任何疑问，可通过以下方式联系我们：hali@paofou.vip。',
             '我们将在收到请求后的合理时间内予以响应与处理。',
+            '我们已设立数据保护官（DPO）专职负责个人信息保护与数据合规事务，您可经 hali@paofou.vip 联系 DPO，我们将在合理时间内予以响应。',
+          ],
+        },
+        {
+          title: '8. 儿童与未成年人数据保护',
+          paragraphs: [
+            '本服务不面向未满 18 周岁的未成年人，我们不会故意收集儿童的个人数据。',
+            '若我们发现误收集了儿童的个人数据，将立即予以删除并向其监护人说明情况。',
+            '父母或监护人如发现儿童数据被误收集，可通过 hali@paofou.vip 申请删除相关个人数据。',
+          ],
+        },
+        {
+          title: '9. 管辖法律与印尼数据合规',
+          paragraphs: [
+            '本服务遵守印度尼西亚 2022 年第 27 号《个人数据保护法》（Undang-Undang Pelindungan Data Pribadi，简称 PDP Law），并严格遵循 TikTok API 规范处理数据。',
+            '本服务的数据控制者为 PT TTBIG BOOM INDONESIA（以下简称“本公司”）。',
+            '本政策的解释、效力及由此产生的任何争议，均受印度尼西亚法律管辖，相关争议提交印度尼西亚有管辖权的法院处理。',
           ],
         },
       ],
@@ -616,6 +656,26 @@ export const content: Record<Lang, Content> = {
         membersCount: '位成员',
       },
     },
+    oauth: {
+      sectionTitle: 'TikTok 账号绑定',
+      sectionSubtitle: '通过 OAuth 授权，将你的 TikTok 广告账户连接到 GMVMAX（演示）。',
+      connectButton: '绑定 TikTok 账号',
+      connectedBadge: '已连接 TikTok 账号',
+      accountLabel: '演示账号',
+      disconnect: '断开连接',
+      pageHeading: '登录 TikTok',
+      simulatedBanner: '仿真 TikTok 授权页（演示用，非真实登录）',
+      demoNote: '* 演示授权逻辑（DEMO client_id，非真实凭证）',
+      authPrompt: 'gmvmax-center 想要访问你的 TikTok 广告账户',
+      scopeTitle: '此应用将获得以下权限',
+      scopeBasic: '基础用户信息',
+      scopeAd: '广告账户读取',
+      authorize: '授权并连接',
+      cancel: '取消',
+      authorized: 'TikTok 账号授权成功',
+      returning: '正在返回 gmvmax-center…',
+      backToConsole: '返回控制台',
+    },
   },
   en: {
     nav: {
@@ -756,10 +816,27 @@ export const content: Record<Lang, Content> = {
           ],
         },
         {
-          title: '7. Contact Us',
+          title: '7. Contact and Data Protection Officer (DPO)',
           paragraphs: [
             'If you have any questions about this Privacy Policy or how we process data, you can contact us at: hali@paofou.vip.',
             'We will respond to and process your request within a reasonable time after receiving it.',
+            'We have appointed a Data Protection Officer (DPO) responsible for personal data protection and compliance. You may contact the DPO at hali@paofou.vip, and we will respond within a reasonable time.',
+          ],
+        },
+        {
+          title: '8. Children and Minor Data Protection',
+          paragraphs: [
+            'This Service is not directed to users under the age of 18, and we do not knowingly collect personal data from children.',
+            'If we discover that we have inadvertently collected a child’s personal data, we will delete it promptly and inform the guardian where feasible.',
+            'Parents or guardians who believe a child’s data was collected in error may request deletion via hali@paofou.vip.',
+          ],
+        },
+        {
+          title: '9. Governing Law and Indonesia Data Compliance',
+          paragraphs: [
+            'This Service complies with Indonesia’s Personal Data Protection Law No. 27 of 2022 (Undang-Undang Pelindungan Data Pribadi, “PDP Law”) and strictly follows the TikTok API specifications in processing data.',
+            'The data controller of this Service is PT TTBIG BOOM INDONESIA (the “Company”).',
+            'The interpretation, validity, and any dispute arising from this policy are governed by the laws of Indonesia, and any dispute shall be submitted to the competent court in Indonesia.',
           ],
         },
       ],
@@ -990,6 +1067,26 @@ export const content: Record<Lang, Content> = {
         colMembers: 'Members',
         membersCount: 'members',
       },
+    },
+    oauth: {
+      sectionTitle: 'TikTok Account Binding',
+      sectionSubtitle: 'Connect your TikTok ad account to GMVMAX via OAuth authorization (demo).',
+      connectButton: 'Connect TikTok Account',
+      connectedBadge: 'TikTok Account Connected',
+      accountLabel: 'Demo account',
+      disconnect: 'Disconnect',
+      pageHeading: 'Log in to TikTok',
+      simulatedBanner: 'Simulated TikTok authorization page (demo only, not a real login)',
+      demoNote: '* Demo authorization flow (DEMO client_id, not real credentials)',
+      authPrompt: 'gmvmax-center wants to access your TikTok ad account',
+      scopeTitle: 'This app will get the following permissions',
+      scopeBasic: 'Basic user info',
+      scopeAd: 'Ad account read',
+      authorize: 'Authorize & Connect',
+      cancel: 'Cancel',
+      authorized: 'TikTok Account Authorized',
+      returning: 'Returning to gmvmax-center…',
+      backToConsole: 'Back to Console',
     },
   },
 };
