@@ -344,6 +344,7 @@ export const content: Record<Lang, Content> = {
           title: '2. TikTok 广告数据授权范围',
           paragraphs: [
             '在您通过 TikTok 开发者平台完成授权后，我们仅在您授予的权限范围内读取广告账户相关的表现数据，包括但不限于广告系列、广告组与创意信息，消耗、GMV、ROAS、转化与订单数据，以及受众、投放地域与时段等投放配置信息。我们不会超出授权范围访问您账户的其它数据。',
+            '所有数据收集与处理均严格遵循 TikTok API 规范及 TikTok 开发者平台的相关要求，仅在您授权的范围内进行。',
           ],
         },
         {
@@ -419,6 +420,7 @@ export const content: Record<Lang, Content> = {
             '本服务通过 TikTok 官方 API 提供指标监控、规则生成与自动化投放执行等能力，其可用性受 TikTok 平台接口与授权范围约束。',
             '自动化投放调整仅在您设定的规则边界内执行，最终结果以 TikTok 平台实际生效为准。',
             '我们不对因平台接口变更、网络故障、不可抗力或您账户本身限制而导致的服务中断或投放偏差承担责任。',
+            '本服务的数据收集与处理严格遵循 TikTok API 规范，仅在授权范围内进行。',
           ],
         },
         {
@@ -716,6 +718,7 @@ export const content: Record<Lang, Content> = {
           title: '2. Scope of TikTok Ad Data Authorization',
           paragraphs: [
             'After you complete authorization through the TikTok Developer Platform, we only read performance data related to your ad account within the permissions you grant. This includes, but is not limited to, campaign, ad group, and creative information; spend, GMV, ROAS, conversion, and order data; and targeting, delivery region, and schedule configuration. We will not access other data in your account beyond the authorized scope.',
+            'All data collection and processing strictly follow the TikTok API specifications and the requirements of the TikTok Developer Platform, and are conducted only within your authorized scope.',
           ],
         },
         {
@@ -791,6 +794,7 @@ export const content: Record<Lang, Content> = {
             'The Service provides capabilities such as metrics monitoring, rule generation, and automated delivery execution through TikTok’s official API, and its availability is constrained by TikTok’s interfaces and your authorized scope.',
             'Automated delivery adjustments are executed only within the rule boundaries you set, and the final result is subject to what takes effect on the TikTok platform.',
             'We are not liable for service interruptions or delivery deviations caused by platform API changes, network failures, force majeure, or limitations of your own account.',
+            'The Service’s data collection and processing strictly follow the TikTok API specifications and are conducted only within the authorized scope.',
           ],
         },
         {

@@ -26,6 +26,9 @@ export default function Footer() {
             <Typography variant="subtitle1" sx={{ fontWeight: 800, color: '#fff' }}>
               GMVMAX
             </Typography>
+            <Typography variant="body2" sx={{ color: '#fff', fontWeight: 700, mt: 0.5 }}>
+              PT TTBIG BOOM INDONESIA
+            </Typography>
             <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.6)', mt: 0.5 }}>
               {t.footer.tagline}
             </Typography>
@@ -51,7 +54,7 @@ export default function Footer() {
         </Stack>
         <Divider sx={{ borderColor: 'rgba(255,255,255,0.12)', my: 3 }} />
         <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.5)' }}>
-          © {year} {t.footer.copyright}
+          © {year} PT TTBIG BOOM INDONESIA. All rights reserved.
         </Typography>
       </Container>
     </Box>
